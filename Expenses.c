@@ -9,41 +9,47 @@ void NullCheck(FILE *Fchecker)
         printf("File is exist\n");
 }
 
-char Payee()
+void Payee()
 {
     char str[256];
 
     printf("何にお金を使いましたか？\n");
-    scanf("%s",str);
-
-    return str;
+    scanf("%s",str);   
+    printf("あなたは ");
+    printf("%s",str);
+    printf(" にお金を使いました。\n");
 }
 
-int HowMuch()
+void HowMuch()
 {
     int amount = 0;
     printf("いくらお金を使いましたか？\n");
     scanf("%d",&amount);
+    printf("あなたの使った金額は ");
+    printf("%d",amount);
+    printf("円です。\n");
+}
 
-    return amount;
+int EndCheck()
+{
+    int endcheck = 0;
+    printf("買い物は以上ですか？\n入力を終了したいなら 0 を入力してください。そうでないのなら0以外の整数を入力してください。");
+    scanf("%d",&endcheck);
+    return endcheck;
 }
 
 int main()
 {
+
     FILE *f = fopen("data.txt", "a");
     NullCheck(f);
+    do
+    {
+        HowMuch();
+        Payee();
+    }while(EndCheck());
+
     
-    int howmuch = HowMuch(); // how much money did you spend?
-    printf("あなたの使った金額は ");
-    printf("%d",howmuch);
-    printf("円です。\n");
-
-    char str[256];
-    str = Payee();
-    printf("あなたは ");
-    printf("%s",str);
-    printf(" にお金を使いました。");
-
     fclose(f);
 
     return 0;
