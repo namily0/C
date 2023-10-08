@@ -1,5 +1,6 @@
 //return charができないところで一旦終了.
 #include <stdio.h>
+#include <time.h>
 
 void NullCheck(FILE *Fchecker)
 {
@@ -9,7 +10,27 @@ void NullCheck(FILE *Fchecker)
         printf("File is exist\n");
 }
 
-void Payee()
+void Today(FILE *f)
+{
+    time_t t = time(NULL);
+    struct tm *local = localtime(&t);
+
+    fprintf(f,"%04d/%02d/%02d ",local->tm_year + 1900,local->tm_mon + 1,local->tm_mday);
+}
+
+void HowMuch(FILE *f)
+{
+    int amount = 0;
+    printf("いくらお金を使いましたか？\n");
+    scanf("%d",&amount);
+    printf("あなたの使った金額は ");
+    printf("%d",amount);
+    printf("円です。\n");
+
+    fprintf(f,"%d,",amount);
+}
+
+void Payee(FILE *f)
 {
     char str[256];
 
@@ -18,16 +39,9 @@ void Payee()
     printf("あなたは ");
     printf("%s",str);
     printf(" にお金を使いました。\n");
-}
 
-void HowMuch()
-{
-    int amount = 0;
-    printf("いくらお金を使いましたか？\n");
-    scanf("%d",&amount);
-    printf("あなたの使った金額は ");
-    printf("%d",amount);
-    printf("円です。\n");
+    fprintf(f,str);
+    fprintf(f,"\n");
 }
 
 int EndCheck()
@@ -45,12 +59,10 @@ int main()
     NullCheck(f);
     do
     {
-        HowMuch();
-        Payee();
+        Today(f);
+        HowMuch(f);
+        Payee(f);
     }while(EndCheck());
-
-    
-    fclose(f);
 
     return 0;
 }
