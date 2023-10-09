@@ -1,4 +1,3 @@
-//return char‚ª‚Å‚«‚È‚¢‚Æ‚±‚ë‚Åˆê’UI—¹.
 #include <stdio.h>
 #include <time.h>
 
@@ -21,11 +20,11 @@ void Today(FILE *f)
 void HowMuch(FILE *f)
 {
     int amount = 0;
-    printf("‚¢‚­‚ç‚¨‹à‚ğg‚¢‚Ü‚µ‚½‚©H\n");
+    printf("ã„ãã‚‰ãŠé‡‘ã‚’ä½¿ã„ã¾ã—ãŸã‹ï¼Ÿ\n");
     scanf("%d",&amount);
-    printf("‚ ‚È‚½‚Ìg‚Á‚½‹àŠz‚Í ");
+    printf("ã‚ãªãŸã®ä½¿ã£ãŸé‡‘é¡ã¯ ");
     printf("%d",amount);
-    printf("‰~‚Å‚·B\n");
+    printf("å††ã§ã™ã€‚\n");
 
     fprintf(f,"%d,",amount);
 }
@@ -34,11 +33,11 @@ void Payee(FILE *f)
 {
     char str[256];
 
-    printf("‰½‚É‚¨‹à‚ğg‚¢‚Ü‚µ‚½‚©H\n");
+    printf("ä½•ã«ãŠé‡‘ã‚’ä½¿ã„ã¾ã—ãŸã‹ï¼Ÿ\n");
     scanf("%s",str);   
-    printf("‚ ‚È‚½‚Í ");
+    printf("ã‚ãªãŸã¯ ");
     printf("%s",str);
-    printf(" ‚É‚¨‹à‚ğg‚¢‚Ü‚µ‚½B\n");
+    printf(" ã«ãŠé‡‘ã‚’ä½¿ã„ã¾ã—ãŸã€‚\n");
 
     fprintf(f,str);
     fprintf(f,"\n");
@@ -47,7 +46,7 @@ void Payee(FILE *f)
 int EndCheck()
 {
     int endcheck = 0;
-    printf("”ƒ‚¢•¨‚ÍˆÈã‚Å‚·‚©H\n“ü—Í‚ğI—¹‚µ‚½‚¢‚È‚ç 0 ‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B‚»‚¤‚Å‚È‚¢‚Ì‚È‚ç0ˆÈŠO‚Ì®”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+    printf("è²·ã„ç‰©ã¯ä»¥ä¸Šã§ã™ã‹ï¼Ÿ\nå…¥åŠ›ã‚’çµ‚äº†ã—ãŸã„ãªã‚‰ 0 ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ãã†ã§ãªã„ã®ãªã‚‰0ä»¥å¤–ã®æ•´æ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
     scanf("%d",&endcheck);
     return endcheck;
 }
