@@ -1,2 +1,1 @@
 hello my name is test1!!!
-これはpushされてほしくないテキストだとします（テスト）
