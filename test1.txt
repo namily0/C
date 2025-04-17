@@ -1,2 +1,6 @@
 hello my name is test1!!!
+<<<<<<< HEAD
+test test test
+=======
 fixed!
+>>>>>>> da74855e18addaed734c656c3b1f532823264877
